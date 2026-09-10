@@ -1,0 +1,51 @@
+{
+  "name": "genpark-multimodal-vision-table-structural-extractor-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - High-precision multimodal OCR table grid and merged-cell structure reconstruction engine converting visual spec sheets into clean Markdown/JSON.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "multimodal-vision",
+  "tags": [
+    "mineru",
+    "marker",
+    "table-extraction",
+    "ocr-vision",
+    "multimodal-parser"
+  ],
+  "inputs": {
+    "image_uri": {
+      "type": "string",
+      "default": "spec_sheet_sample.png"
+    },
+    "expected_columns": {
+      "type": "array",
+      "default": [
+        "Feature",
+        "Standard",
+        "Pro Max"
+      ]
+    }
+  },
+  "outputs": {
+    "extraction_id": {
+      "type": "string"
+    },
+    "reconstructed_rows_count": {
+      "type": "integer"
+    },
+    "reconstructed_columns_count": {
+      "type": "integer"
+    },
+    "merged_cells_resolved_count": {
+      "type": "integer"
+    },
+    "clean_markdown_table": {
+      "type": "string"
+    },
+    "structured_dossier_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
